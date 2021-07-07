@@ -1,0 +1,139 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.brennabor__container {
+  position: absolute;
+  left: 0;
+  animation: left-to-right 7s ease-out;
+}
+
+.brennabor {
+  position: relative;
+  display: block;
+  width: 700px;
+  height: 400px;
+}
+
+.static-front,
+.static-rear {
+  width: 700px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.wheel-rear {
+  position: absolute;
+  width: 255.5px;
+  bottom: 16px;
+  left: 12.5px;
+}
+
+.wheel-front {
+  position: absolute;
+  width: 255.5px;
+  bottom: 18.8px;
+  left: 434px;
+}
+
+.main-gear {
+  position: absolute;
+  width: 94.5px;
+  bottom: 74.4px;
+  left: 273px;
+}
+
+.pedal-front-axis {
+  width: 62px;
+  height: 54px;
+  position: absolute;
+  bottom: 121px;
+  left: 320px;
+  display: flex;
+  justify-content: flex-end;
+  animation: rotate-front-pedal 3s infinite linear;
+}
+
+.pedal-front {
+  width: 36px;
+  height: 17px;
+}
+
+.pedal-rear-axis {
+  width: 58px;
+  height: 51px;
+  position: absolute;
+  bottom: 73px;
+  left: 264px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  animation: rotate-rear-pedal 3s infinite linear;
+}
+
+.pedal-rear {
+  width: 33px;
+  height: 15px;
+}
+
+.wheel,
+.wheel,
+.main-gear {
+  animation: rotate-clockwise 3s infinite linear;
+}
+
+.pedal-front,
+.pedal-rear {
+  animation: rotate-counter-clockwise 3s infinite linear;
+}
+
+@keyframes rotate-clockwise {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes rotate-counter-clockwise {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-359deg);
+  }
+}
+
+@keyframes rotate-front-pedal {
+  from {
+    transform: rotate(0deg);
+    transform-origin: left bottom;
+  }
+  to {
+    transform: rotate(359deg);
+    transform-origin: left bottom;
+  }
+}
+
+@keyframes rotate-rear-pedal {
+  from {
+    transform: rotate(0deg);
+    transform-origin: right top;
+  }
+  to {
+    transform: rotate(359deg);
+    transform-origin: right top;
+  }
+}
+
+@keyframes left-to-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(150%);
+  }
+}
